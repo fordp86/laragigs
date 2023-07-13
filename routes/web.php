@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ListingController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Listing;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// All listings
+Route::get('/', [ListingController::class,'index']);
+
+// Single Listing
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
