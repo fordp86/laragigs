@@ -14,6 +14,8 @@
       <p class="text-2xl text-gray-200 font-bold my-4">
           Find or post Laravel jobs & projects
       </p>
+      @auth
+      @else
       <div>
           <a
               href="/register"
@@ -21,5 +23,6 @@
               >Sign Up to List a Gig</a
           >
       </div>
+      @endauth
   </div>
 </section>
